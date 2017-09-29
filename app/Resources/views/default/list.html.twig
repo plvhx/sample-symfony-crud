@@ -1,0 +1,35 @@
+{% extends 'crud-base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid" style="margin-top: 80px;">
+	<table class="table table-bordered table-condensed">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>First Name</th>
+				<th>Middle Name</th>
+				<th>Last Name</th>
+				<th>Act.</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td>{{ user.firstName }}</td>
+					<td>{{ user.middleName }}</td>
+					<td>{{ user.lastName }}</td>
+					<td>
+						<a href="{{ root_uri ~ 'base/update/' ~ user.id }}">
+							<span class="label label-info">Update</span>
+						</a>
+						<a href="{{ root_uri ~ 'data/delete/' ~ user.id }}">
+							<span class="label label-danger">Delete</span>
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

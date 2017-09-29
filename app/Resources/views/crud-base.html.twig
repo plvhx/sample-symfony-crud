@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/bootstrap.min.css') }}" />
+	<script src="{{ asset('assets/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('assets/bootstrap.min.js') }}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#base-menu" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{ root_uri ~ 'base' }}">foobar</a>
+			</div>
+			<div class="collapse navbar-collapse" id="base-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="{{ root_uri ~ 'base/input' }}">Input Data</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	{% block body %}{% endblock %}
+</body>
+</html>

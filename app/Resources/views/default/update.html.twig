@@ -1,0 +1,21 @@
+{% extends 'crud-base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid" style="margin-top: 80px;">
+	<form method="post" action="{{ root_uri ~ 'data/update/' ~ user.id }}">
+		<div class="form-group">
+			<label for="first-name">First Name</label>
+			<input type="text" class="form-control" name="first-name" value="{{ user.firstName }}" placeholder="First Name" />
+		</div>
+		<div class="form-group">
+			<label for="middle-name">Middle Name</label>
+			<input type="text" class="form-control" name="middle-name" value="{{ user.middleName }}" placeholder="Middle Name" />
+		</div>
+		<div class="form-group">
+			<label for="last-name">Last Name</label>
+			<input type="text" class="form-control" name="last-name" value="{{ user.lastName }}" placeholder="Last Name" />
+		</div>
+		<input type="submit" name="update" class="btn btn-primary" value="Ubah" />
+	</form>
+</div>
+{% endblock %}
